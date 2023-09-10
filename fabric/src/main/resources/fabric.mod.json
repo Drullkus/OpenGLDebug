@@ -2,10 +2,14 @@
   "schemaVersion": 1,
   "id": "opengldebug",
   "version": "${version}",
-  "name": "OpenGLDebug",
+  "name": "${mod_name}",
   "description": "",
-  "authors": [],
-  "contact": {"repo": "https://github.com/Drullkus/OpenGLDebug"},
+  "authors": [
+    "${mod_author}"
+  ],
+  "contact": {
+    "repo": "https://github.com/Drullkus/OpenGLDebug"
+  },
   "license": "LGPL-3.0",
   "icon": "assets/opengldebug/icon.png",
   "environment": "client",
@@ -15,7 +19,7 @@
     "opengldebug.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.14",
     "fabric": "*",
     "minecraft": "${minecraft_version}"
   }
