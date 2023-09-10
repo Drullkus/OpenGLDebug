@@ -19,6 +19,6 @@ public class OverlayTextureMixin {
     @Inject(method = "<init>", at = @At(value = "TAIL"))
     private void addDebugName(CallbackInfo ci) {
         // This texture is never given a name while the lightmap is, kinda funky
-        GLDebugHelper.setTextureDebugName("Overlay texture", this.texture);
+        GLDebugHelper.setTextureDebugName("Overlay texture (internal)", this.texture);
     }
 }

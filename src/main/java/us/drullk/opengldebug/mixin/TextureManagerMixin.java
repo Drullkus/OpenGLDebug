@@ -13,6 +13,6 @@ import us.drullk.opengldebug.GLDebugHelper;
 public class TextureManagerMixin {
     @Inject(method = "loadTexture", at = @At(value = "RETURN", shift = At.Shift.BEFORE))
     private void addDebugName(ResourceLocation resourceLocation, AbstractTexture abstractTexture, CallbackInfoReturnable<AbstractTexture> cir) {
-        GLDebugHelper.setTextureDebugName(resourceLocation.toString(), abstractTexture);
+        GLDebugHelper.setTextureDebugName(resourceLocation.toString().replace("minecraft:", ""), abstractTexture);
     }
 }

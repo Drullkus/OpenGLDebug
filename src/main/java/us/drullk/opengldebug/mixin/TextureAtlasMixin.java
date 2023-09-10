@@ -18,6 +18,6 @@ public abstract class TextureAtlasMixin extends AbstractTexture {
 
     @Inject(method = "upload", at = @At(value = "TAIL"))
     private void addDebugName(SpriteLoader.Preparations preparations, CallbackInfo ci) {
-        GLDebugHelper.setTextureDebugName(this.location().toString(), this);
+        GLDebugHelper.setTextureDebugName(this.location().toString().replace("minecraft:", ""), this);
     }
 }

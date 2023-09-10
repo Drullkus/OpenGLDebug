@@ -1,4 +1,4 @@
-package us.drullk.opengldebug.client;
+package us.drullk.opengldebug;
 
 public interface NameableRenderTarget {
     String getDebugName();

@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import us.drullk.opengldebug.GLDebugHelper;
-import us.drullk.opengldebug.client.NameableRenderTarget;
+import us.drullk.opengldebug.NameableRenderTarget;
 
 @Mixin(RenderTarget.class)
 public class RenderTargetMixin implements NameableRenderTarget {
