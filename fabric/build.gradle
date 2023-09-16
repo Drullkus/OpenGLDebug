@@ -5,7 +5,7 @@ plugins {
     id 'fabric-loom'
 }
 
-version = "${mod_version}+${minecraft_version}-fabric"
+version = "${mod_version}-fabric"
 
 base {
     archivesName = mod_name
