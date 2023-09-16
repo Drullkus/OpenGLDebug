@@ -5,10 +5,10 @@ plugins {
     id 'fabric-loom'
 }
 
-version = "${mod_version}+${minecraft_version}-fabric"
+version = "${mod_version}+${minecraft_version}"
 
 base {
-    archivesName = mod_id
+    archivesName = "${mod_id}-fabric"
 }
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
@@ -45,9 +45,9 @@ loom {
 tasks.withType(JavaCompile).configureEach {
     source(project(":common").sourceSets.main.allSource)
 }
-tasks.withType(Javadoc).configureEach {
-    source(project(":common").sourceSets.main.allJava)
-}
+//tasks.withType(Javadoc).configureEach {
+//    source(project(":common").sourceSets.main.allJava)
+//}
 tasks.named("sourcesJar", Jar) {
     from(project(":common").sourceSets.main.allSource)
 }

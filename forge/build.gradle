@@ -5,10 +5,10 @@ plugins {
     id 'org.spongepowered.mixin'
 }
 
-version = "${mod_version}+${minecraft_version}-forge"
+version = "${mod_version}+${minecraft_version}"
 
 base {
-    archivesName = mod_id
+    archivesName = "${mod_id}-forge"
 }
 mixin {
     add(sourceSets.main, "${mod_id}.refmap.json")
@@ -84,9 +84,9 @@ dependencies {
 tasks.withType(JavaCompile).configureEach {
     source(project(":common").sourceSets.main.allSource)
 }
-tasks.withType(Javadoc).configureEach {
-    source(project(":common").sourceSets.main.allJava)
-}
+//tasks.withType(Javadoc).configureEach {
+//    source(project(":common").sourceSets.main.allJava)
+//}
 tasks.named("sourcesJar", Jar) {
     from(project(":common").sourceSets.main.allSource)
 }
