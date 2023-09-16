@@ -28,7 +28,12 @@ publishing {
     }
     repositories {
         maven {
-            url "file://" + System.getenv("local_maven")
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/Drullkus/OpenGLDebug"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
         }
     }
 }
