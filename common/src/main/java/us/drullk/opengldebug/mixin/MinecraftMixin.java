@@ -19,4 +19,9 @@ public abstract class MinecraftMixin {
     private void nameMain(GameConfig gameConfig, CallbackInfo ci) {
         GLDebugHelper.setFBODebugNames(this.getMainRenderTarget(), "Minecraft main");
     }
+
+    @Inject(method = "runTick", at = @At(value = "HEAD"))
+    private void resetCounter(boolean b, CallbackInfo ci) {
+        GLDebugHelper.resetCounter();
+    }
 }

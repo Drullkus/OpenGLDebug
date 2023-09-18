@@ -8,6 +8,30 @@ import org.lwjgl.opengl.KHRDebug;
 public final class GLDebugHelper {
     //public static final Logger LOGGER = LogUtils.getLogger();
 
+    // Value resets at beginning of each render-frame
+    // Used in enumerating ids for glPushDebugGroup calls, within each render-frame
+    private static int id = 0;
+
+    public static void resetCounter() {
+        id = 0;
+    }
+
+    public static int getMessageId() {
+        return id++;
+    }
+
+    public static void pushMessageGroupFromProfiler(String message) {
+        pushMessageGroup("Profiler group: " + message);
+    }
+
+    public static void pushMessageGroup(String message) {
+        KHRDebug.glPushDebugGroup(KHRDebug.GL_DEBUG_SOURCE_APPLICATION, getMessageId(), message);
+    }
+
+    public static void popMessageGroup() {
+        KHRDebug.glPopDebugGroup();
+    }
+
     public static void setTextureDebugName(String name, AbstractTexture texture) {
         setTextureDebugName(name, texture.getId());
     }
