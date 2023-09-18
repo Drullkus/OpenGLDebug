@@ -37,12 +37,12 @@ jobs:
       with:
         arguments: build
 
-    # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
-    # the publishing section of your build.gradle
-    - name: Publish to GitHub Packages
+    # Needs to correspond to the credentials environment variables used in
+    # the publishing section of build.gradle
+    - name: Publish to ModMaven
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
         arguments: publish
       env:
-        GITHUB_ACTOR: ${{ github.actor }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MAVEN_ACTOR: ${{ secrets.MODMAVEN_ACTOR }}
+        MAVEN_TOKEN: ${{ secrets.MODMAVEN_TOKEN }}
