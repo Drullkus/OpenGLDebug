@@ -44,5 +44,5 @@ jobs:
       with:
         arguments: publish
       env:
-        MAVEN_ACTOR: ${{ secrets.MODMAVEN_ACTOR }}
-        MAVEN_TOKEN: ${{ secrets.MODMAVEN_TOKEN }}
+        MODMAVEN_ACTOR: ${{ secrets.MODMAVEN_ACTOR }}
+        MODMAVEN_TOKEN: ${{ secrets.MODMAVEN_TOKEN }}
